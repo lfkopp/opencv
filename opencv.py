@@ -1,14 +1,16 @@
 import cv2
 import numpy as np
-#print(cv2.__version__)
+print(cv2.__version__)
 # pip install opencv_python-3*win_amd64.whl
 
 
-face_cascade = cv2.CascadeClassifier('opencv/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('opencv/haarcascade_eye.xml')
-img = cv2.imread('opencv/foto.jpg')
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+face_cascade = cv2.CascadeClassifier('xml/haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('xml/haarcascade_eye.xml')
+img = cv2.imread('foto.jpg')
+#gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2.imshow('img',img)
 
+'''
 faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 for (x,y,w,h) in faces:
     cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
@@ -20,3 +22,4 @@ for (x,y,w,h) in faces:
 cv2.imshow('img',img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+'''
